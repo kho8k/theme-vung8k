@@ -1,0 +1,1761 @@
+@import "https://fonts.googleapis.com/css?family=Asap:400,500,700";
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,300&amp;subset=latin,vietnamese";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+
+@font-face {
+    font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    ;
+    src: url(../fonts/montserrat-light-webfont.woff2) format('woff2'), url(../fonts/montserrat-light-webfont.woff) format('woff');
+    font-weight: 300;
+    font-style: normal
+}
+
+:root {
+    --main-color: #c30e0e;
+    --vote-color: #fffa00;
+    --bg-main: #131212;
+    --bg-primary: #0c0c0c;
+}
+
+
+.Container {
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+    background-color: var(--bg-primary);
+}
+
+*,
+:before,
+:after {
+    box-sizing: inherit
+}
+
+.Menu,
+.Search,
+.Login {
+    text-align: left;
+}
+
+.Rght {
+    text-align: right;
+}
+
+
+body,
+.AZList>li>a,
+.MenuFt>ul>li>a,
+.TPMvCn,
+.wp-pagenavi a,
+.TPost.C .Description p[class] span,
+.SearchMovies .Form-Group input {
+    color: #78909c
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: Encode Sans;
+    font-weight: 300
+}
+
+html {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.ClFx:before,
+.ClFx:after,
+.Rows:before,
+.Rows:after,
+.Container:before,
+.Container:after {
+    content: '';
+    display: block;
+    overflow: hidden
+}
+
+
+
+.Container:after {
+    clear: both
+}
+
+::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, .3)
+}
+
+@media screen and (min-width:62em) {
+    ::-webkit-scrollbar-thumb {
+        background-color: #aab71c
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        border-radius: 5px
+    }
+
+
+    .AF.Rows>* {
+        float: left
+    }
+
+    .AX[class*=Row] {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap
+    }
+
+
+
+
+    .DX[class*=Row] {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap
+    }
+
+    .DX.Rows>*,
+    .DX.Row.DFluid>.DFixed {
+        -webkit-flex: none;
+        -ms-flex: none;
+        flex: none;
+        max-width: 100%
+    }
+
+    .DX.Row.DFluid>* {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1
+    }
+
+    .Column.D01,
+    .Rows.D01>* {
+        width: 8.33333333%
+    }
+
+    .Column.D02,
+    .Rows.D02>* {
+        width: 16.66666667%
+    }
+
+    .Column.D20,
+    .Rows.D20>* {
+        width: 20%
+    }
+
+    .Column.D03,
+    .Rows.D03>* {
+        width: 25%
+    }
+
+    .Column.D04,
+    .Rows.D04>* {
+        width: 33.33333333%
+    }
+
+    .Column.D05,
+    .Rows.D05>* {
+        width: 41.66666667%
+    }
+
+    .Column.D06,
+    .Rows.D06>* {
+        width: 50%
+    }
+
+    .Column.D07,
+    .Rows.D07>* {
+        width: 58.33333333%
+    }
+
+    .Column.D08,
+    .Rows.D08>* {
+        width: 66.66666667%
+    }
+
+    .Column.D09,
+    .Rows.D09>* {
+        width: 75%
+    }
+
+    .Column.D10,
+    .Rows.D10>* {
+        width: 83.33333333%
+    }
+
+    .Column.D11,
+    .Rows.D11>* {
+        width: 91.66666667%
+    }
+
+    .Column.D12,
+    .Rows.D12>* {
+        width: 100%
+    }
+}
+
+/* logo */
+.Logo,
+.MnBr .Menu,
+.MnBr .Menu>ul>li {
+    float: left
+}
+
+.Logo {
+    padding: 15px 0;
+    height: 65px
+}
+
+.Logo img {
+    max-height: 100%
+}
+
+/* .logo { */
+/* menu */
+.menu-item a {
+    padding: 10px 15px;
+    color: white !important;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.menu-item.menu-item-has-children>a::after {
+    font-size: 12px;
+    color: white;
+    margin-left: 5px;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-item a:hover,
+.menu-item.active a {
+    background-color: #444 !important;
+}
+
+.Menu a,
+.widget_nav_menu a {
+    display: block;
+    padding: 8px 10px;
+    font-weight: 500;
+    font-family: asap
+}
+
+.menu-item.menu-item-has-children>a:hover::after {
+    color: white !important;
+}
+
+.Menu,
+.Search,
+.Login {
+    text-align: left
+}
+
+button,
+input,
+textarea,
+select,
+label,
+label i:before,
+a,
+[class*=Btn] {
+    transition: .2s;
+}
+
+/* .menu { */
+
+.EcBgA,
+.Header .Rght:before,
+.MenuBtnClose,
+.Search .Form-Icon input,
+.TPlayer .Title,
+.TPlayer .lgtbx-lnk,
+.TPostBg:after {
+    background-color: var(--bg-primary);
+}
+
+.Search .Form-Icon input {
+    border-color: #263238
+}
+
+.Search .Form-Icon input {
+    margin-bottom: 0;
+    border: 1px solid
+}
+
+.Search .Form-Icon input {
+    border-color: #263238;
+}
+
+input,
+select {
+    height: 2.5rem;
+    line-height: normal
+}
+
+input,
+textarea,
+select,
+.Form-Select label {
+    display: block;
+    padding: .5rem 1rem;
+    width: 100%
+}
+
+/* header */
+@media screen and (min-width:70em) {
+    .Container {
+        max-width: 1400px
+    }
+
+    .EF.Rows>* {
+        float: left
+    }
+
+    .EX[class*=Row] {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap
+    }
+
+    .EX.Rows>*,
+    .EX.Row.EFluid>.EFixed {
+        -webkit-flex: none;
+        -ms-flex: none;
+        flex: none;
+        max-width: 100%
+    }
+
+    .EX.Row.EFluid>* {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1
+    }
+
+    .Column.E01,
+    .Rows.E01>* {
+        width: 8.33333333%
+    }
+
+    .Column.E011,
+    .Rows.E011>* {
+        width: 12.5%
+    }
+
+    .Column.E02,
+    .Rows.E02>* {
+        width: 16.66666667%
+    }
+
+    .Column.E20,
+    .Rows.E20>* {
+        width: 20%
+    }
+
+    .Column.E03,
+    .Rows.E03>* {
+        width: 25%
+    }
+
+    .Column.E04,
+    .Rows.E04>* {
+        width: 33.33333333%
+    }
+
+    .Column.E05,
+    .Rows.E05>* {
+        width: 41.66666667%
+    }
+
+    .Column.E06,
+    .Rows.E06>* {
+        width: 50%
+    }
+
+    .Column.E07,
+    .Rows.E07>* {
+        width: 58.33333333%
+    }
+
+    .Column.E08,
+    .Rows.E08>* {
+        width: 66.66666667%
+    }
+
+    .Column.E09,
+    .Rows.E09>* {
+        width: 75%
+    }
+
+    .Column.E10,
+    .Rows.E10>* {
+        width: 83.33333333%
+    }
+
+    .Column.E11,
+    .Rows.E11>* {
+        width: 91.66666667%
+    }
+
+    .Column.E12,
+    .Rows.E12>* {
+        width: 100%
+    }
+}
+
+
+[class*=Row]>* {
+    padding-left: .625rem;
+    padding-right: .625rem;
+    min-width: 0
+}
+
+input,
+textarea,
+select,
+.Form-Select label {
+    color: inherit;
+    border-radius: 20px;
+    border: 0;
+    display: block;
+    padding: .5rem 1rem;
+    width: 100%
+}
+
+textarea {
+    overflow: auto;
+    max-width: 100%;
+    height: auto;
+    resize: vertical;
+    padding: 1rem;
+    max-height: 300px
+}
+
+.Form-Icon {
+    position: relative;
+    display: block;
+    padding: 0
+}
+
+
+.Form-Icon input,
+.Form-Icon textarea {
+    padding-left: 2.5rem;
+    font-weight: 300
+}
+
+.Button,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+    border: 0;
+    cursor: pointer;
+    padding: 0 1rem 3px;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    line-height: 37px;
+    border-radius: 25px
+}
+
+@media screen and (min-width:62em) {
+    .CXHd {
+        display: none !important
+    }
+}
+
+.Menu,
+.Search,
+.Login {
+    text-align: left
+}
+
+.Menu>ul>li>a,
+.widget_nav_menu>div>ul>li>a {
+    padding: 0 .5rem;
+    text-transform: uppercase;
+    line-height: 65px
+}
+
+.menu-item-has-children>i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    font-size: .75rem;
+    height: 91px;
+    color: white;
+
+}
+
+.menu-item-has-children>i:before {
+    height: 45px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: .2rem
+}
+
+.Menu .menu-item-has-children>a,
+.widget_nav_menu .menu-item-has-children>a {
+    padding-right: 1.5rem
+}
+
+
+.Search {
+    position: relative
+}
+
+.Search .Form-Icon input,
+.Search .Form-Icon i {
+    opacity: .5
+}
+
+.Search .Form-Icon input:focus,
+.Search .Form-Icon input:focus+i {
+    opacity: 1
+}
+
+.Search .Form-Icon input {
+    margin-bottom: 0;
+    border: 1px solid;
+    border-color: #263238
+}
+
+.Search .Form-Icon i {
+    top: -1px
+}
+
+.Search .Form-Icon button {
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 1px
+}
+
+
+.Body {
+    position: relative;
+    padding: 1.25rem;
+}
+
+.title-home {
+    border-bottom: 1px solid rgb(39 39 42 / 1);
+    margin-bottom: 12px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.icon-arrow {
+    color: #ecc761;
+    font-size: 17px;
+    margin-left: 8px;
+    transform: translateY(-2px);
+}
+
+.icon-plus {
+    background: #6b6b6b;
+
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 6px 15px;
+    border-radius: 4px;
+    margin-left: auto;
+
+}
+
+.list_top_name {
+    color: #fff;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list_top_view {
+    font-size: 12px;
+    color: #ecc761;
+}
+
+.list_top_star {
+    font-size: 12px;
+    display: inline-block;
+
+    line-height: 16px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-weight: 700;
+    background: #ecc761;
+    color: #231414;
+    margin-top: 6px;
+}
+
+@media screen and (min-width: 62em) {
+    .Body .Content {
+        border-radius: 3px;
+    }
+}
+
+.Body .Content {
+    padding: 1.125rem;
+    background-color: var(--bg-main);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .05);
+}
+
+
+
+.TPost .Image {
+    position: relative;
+}
+
+.TPost .Image figure,
+.TPost .Image figure img {
+    border-radius: 10px
+}
+
+.TPost .Image figure {
+    position: relative;
+    padding-top: 150%
+}
+
+.TPost.C img {
+    transition-duration: .2s;
+    object-fit: cover;
+    transition-timing-function: cubic-bezier(.4, 0, 1, 1);
+    object-position: center;
+}
+
+
+.TPost .Image figure img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.TpMvPlay:before,
+.TpMvPlay:after {
+    transition: .2s;
+    opacity: 0
+}
+
+.TPost:hover .TpMvPlay:before {
+    opacity: 1;
+    transform: scale(1)
+}
+
+.TPost:hover .TpMvPlay:after {
+    opacity: .5
+}
+
+.TpMvPlay:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    z-index: 2;
+    transform: scale(0);
+    box-shadow: 0 0 0 2px #fff, 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.TpMvPlay:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px
+}
+
+.TPost .Title {
+    line-height: 20px;
+    transition: .4s;
+    max-height: 40px;
+    overflow: hidden;
+    font-weight: 400
+}
+
+p.Info {
+    margin-bottom: 0
+}
+
+p.Info>span {
+    display: inline-block;
+    vertical-align: top;
+    font-size: .75rem;
+    line-height: 20px;
+    margin-right: .5rem;
+    margin-bottom: 4px
+}
+
+p.Info>span:before {
+    font-size: .875rem;
+    margin-right: .2rem;
+    opacity: .5
+}
+
+p.Info>span:last-child {
+    margin-bottom: 0;
+    margin-right: 0
+}
+
+p.Info>span:before {
+    font-size: .875rem;
+    margin-right: 0.2rem;
+    opacity: .5;
+}
+
+
+p.Info>span.Vote:before {
+    opacity: 1
+}
+
+p.Info>span.Vote:before {
+    color: #ecc761;
+}
+
+.Vote {
+    color: #ecc761;
+}
+
+p.Info>span.Qlty,
+.Qlty {
+    font-size: .625rem
+}
+
+.Qlty {
+    background-color: var(--main-color);
+}
+
+.Qlty {
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
+    line-height: 20px;
+    padding: 0 .6rem;
+    border-radius: 10px;
+    font-weight: 700
+}
+
+
+.Objf img {
+    object-fit: cover;
+    object-position: center
+}
+
+
+.TPost.A {
+    position: relative;
+    padding-left: 65px;
+    min-height: 85px
+}
+
+.TPost.A .Image {
+    position: absolute;
+    width: 55px;
+    left: 0;
+    top: 0
+}
+
+.TPost.A .Image figure,
+.TPost.A .Image figure img,
+.TPost.A .TpMvPlay:after {
+    border-radius: 4px
+}
+
+.TPost.A .Image figure {
+    padding-top: 85px
+}
+
+.TPost.A .TpMvPlay:before {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem
+}
+
+.TPost .Top {
+    position: absolute;
+    left: -5px;
+    top: -4px;
+    min-width: 22px;
+    padding: 0 5px;
+    border-radius: 3px 0 0 0;
+    z-index: 1;
+    font-size: .6rem;
+    font-weight: 700;
+    line-height: 23px;
+    text-align: center
+}
+
+.TPost .Top:before,
+.TPost .Top:after {
+    content: '';
+    width: 0;
+    top: 0;
+    right: -5px;
+    position: absolute;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid transparent
+}
+
+.TPost .Top.Num1 {
+    font-size: 1rem
+}
+
+.TPost .Top>i {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px
+}
+
+.TPost .Top>i:before,
+.TPost .Top>i:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent
+}
+
+.TPost .Top>i:before {
+    border-left: 11px solid transparent;
+    float: right
+}
+
+.TPost .Top>i:after {
+    border-right: 11px solid transparent;
+    float: left
+}
+
+.TPost .Top {
+    background-color: #b71c1c;
+    color: white;
+}
+
+.TPost.C .Image {
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.TPost.C .Title,
+.TPost.C .Year {
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    line-height: 20px
+}
+
+.TPost.C .Title {
+    font-size: .725rem;
+    margin-bottom: 0;
+    font-weight: 700;
+    white-space: nowrap;
+    color: #ffffff;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.TPost.C .Year {
+    display: block;
+    font-size: .75rem
+}
+
+.Button.STPb {
+    line-height: 30px;
+    font-size: .75rem;
+    height: 30px;
+    min-width: 80px
+}
+
+.MovieListSldCn {
+    margin-bottom: 3.25rem
+}
+
+.TPost.D .TPMvCn {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 40px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.733));
+    text-align: center;
+    color: #fff;
+    width: 100%;
+}
+
+.TPost.D .Title {
+    font-weight: 300
+}
+
+.TPost.D .TPMvCn .Title {
+    padding-bottom: 0px
+}
+
+.TPost.D .Image figure {
+    padding-top: 250px
+}
+
+.btn-watchmore:hover {
+    color: #fff;
+    ;
+}
+
+.btn-watchmore {
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: #b71c1c;
+}
+
+.watch-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.TPostBg,
+.TPostBg img,
+.TPostBg:before,
+.TPostBg:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px
+}
+
+.TPostBg {
+    z-index: -1;
+    pointer-events: none
+}
+
+.TPostBg:before,
+.TPostBg:after {
+    content: ''
+}
+
+.TPostBg:before {
+    opacity: .3
+}
+
+
+
+.TPost.Single .Image {
+    width: 180px;
+    margin: 0 auto 1.25rem
+}
+
+.TPost.Single .Image figure {
+    padding-top: 260px
+}
+
+.TPost.Single .Title {
+    line-height: 36px;
+    padding: 7px 0;
+    margin-bottom: 0;
+    max-height: none;
+    font-weight: 300
+}
+
+.TPost.Single .Description {
+    max-height: 100px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    opacity: .7
+}
+
+.TPost.Single .Description>*:last-child {
+    margin-bottom: 0
+}
+
+.TPost.Single footer {
+    padding-top: 19px;
+    border-top: 1px solid transparent
+}
+
+.TPost.Single .Info {
+    margin-bottom: 20px
+}
+
+.ListPOpt {
+    text-align: center;
+    font-size: 0;
+    margin: 0 -5px
+}
+
+.ListPOpt>li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px 5px
+}
+
+.ListPOpt>li>a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    font-size: 1rem;
+    opacity: .5
+}
+
+.ListPOpt>li>a.Fcb,
+.ListPOpt>li>a.Twt,
+.ListPOpt>li>a.Ggl {
+    border: 1px solid transparent;
+    line-height: 28px
+}
+
+
+.TPlayer {
+    position: relative;
+    padding-top: 60%;
+    min-height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    z-index: 2
+}
+
+.TPlayer iframe,
+.TPlayer video,
+.TPlayer object,
+.TPlayer embed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    z-index: 1
+}
+
+.TPlayer .Title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 10px 0 10px 0;
+    z-index: 2;
+    padding: 10px 15px;
+    transition: .2s
+}
+
+.TPlayer .Qlty {
+    margin: 0 10px
+}
+
+
+#comments>.Comment.Wrt {
+    padding-left: 0
+}
+
+#comments>.Comment.Wrt:last-child {
+    margin-bottom: 0
+}
+
+.Comment.Wrt figure:before {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #fff;
+    border-bottom: 10px solid transparent
+}
+
+.CommentsList>li:last-child>.Comment {
+    margin-bottom: 1.25rem
+}
+
+.Comment button {
+    min-width: 200px;
+    margin-bottom: 0
+}
+
+.Comment {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 2.5rem
+}
+
+.Comment textarea {
+    border-radius: 10px
+}
+
+.comment .Comment textarea {
+    border: 1px solid #f1f1f1
+}
+
+.Comment p:first-of-type {
+    margin-bottom: 0
+}
+
+.Comment p:last-of-type {
+    margin-bottom: 5px
+}
+
+.Comment p span {
+    opacity: .5;
+    font-size: 10px
+}
+
+.Comment p a {
+    font-weight: 700
+}
+
+.CommentsList li li .Comment {
+    padding: 1rem;
+    border-radius: 10px;
+    margin-left: 20px
+}
+
+.children .Comment>figure {
+    display: none
+}
+
+.cancel-comment-reply {
+    margin-bottom: 10px
+}
+
+#cancel-comment-reply-link {
+    font-weight: 700
+}
+
+.comment-notes {
+    opacity: .5
+}
+
+.Comment>figure {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.Comment>figure>img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%
+}
+
+.comment-reply-link {
+    display: inline-block;
+    line-height: 20px;
+    font-size: .75rem
+}
+
+.comment-reply-link:before {
+    content: '\e0b7';
+    font-size: 1rem;
+    margin-right: 5px;
+    margin-top: 1px
+}
+
+.InfoList span {
+    font-weight: 700;
+    color: black;
+}
+
+
+
+.InfoList>li:before {
+    font-size: .75rem;
+    position: absolute;
+    left: 0;
+    top: 5px
+}
+
+.InfoList a:hover {
+    opacity: .7
+}
+
+.MvTbCn {
+    animation-name: zoomIn;
+    display: none
+}
+
+.ListCast {
+    max-height: 450px;
+    overflow: auto
+}
+
+.ListCast,
+.ListVids,
+.ListGall {
+    text-align: center;
+    margin-top: -1.25rem
+}
+
+.ListCast>li,
+.ListVids>li,
+.ListGall>li {
+    padding-top: 1.25rem
+}
+
+.ListCast figcaption,
+.ListCast span {
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block
+}
+
+.ListCast figure>span {
+    max-width: 80%;
+    margin: 0 auto .5rem;
+    position: relative;
+    transition: .2s
+}
+
+.ListCast figure:hover>span {
+    transform: scale(1.1)
+}
+
+.ListCast figure>span:before {
+    content: '';
+    display: block;
+    padding-top: 100%
+}
+
+.ListCast figure>span>img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%
+}
+
+.ListCast figcaption span {
+    opacity: .5;
+    font-size: .75rem
+}
+
+.ListVids figure,
+.ListGall figure {
+    position: relative;
+    padding-top: 40%;
+    cursor: pointer
+}
+
+.ListVids figure:before,
+.ListGall figure:before,
+.ListVids figure:after,
+.ListGall figure:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: .2s;
+    opacity: 0;
+    transform: scale(0)
+}
+
+.ListVids figure:before,
+.ListGall figure:before {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 2rem;
+    z-index: 2
+}
+
+ul,
+ol,
+dl,
+dl dt,
+dl dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+table,
+input,
+textarea,
+button,
+select,
+[class*=Form-] {
+    margin-bottom: 1.5rem;
+}
+
+a:hover {
+    color: #7d7d7d;
+}
+
+section>.Top>h2 {
+    color: #fff;
+    font-size: inherit;
+    font-family: Merriweather Sans;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.NoBrdRa .TPost .Image figure,
+.NoBrdRa .TPost .Image figure img,
+.NoBrdRa .TpMvPlay:after,
+.NoBrdRa .TPMvCn,
+.NoBrdRa .Wdgt:before,
+.NoBrdRa .TPost.D .Image:before,
+.NoBrdRa .ListSocial>li>a,
+.NoBrdRa .Button,
+.NoBrdRa button,
+.NoBrdRa input[type=button],
+.NoBrdRa input[type=reset],
+.NoBrdRa input[type=submit],
+.NoBrdRa .Footer .MnBrCn,
+.NoBrdRa .Footer .MnBr,
+.NoBrdRa input,
+.NoBrdRa textarea,
+.NoBrdRa select,
+.NoBrdRa .Form-Select label,
+.NoBrdRa .AZList>li:before,
+.NoBrdRa .SearchMovies .sol-inner-container,
+.NoBrdRa .SearchMovies .sol-selection-container,
+.NoBrdRa .trsrcbx,
+.NoBrdRa .wp-pagenavi a:after,
+.NoBrdRa .wp-pagenavi span:after,
+.NoBrdRa .CommentsList li li .Comment,
+.NoBrdRa .TPostBg,
+.NoBrdRa .TPostBg img,
+.NoBrdRa .TPostBg:before,
+.NoBrdRa .TPostBg:after,
+.NoBrdRa .TPlayerCn,
+.NoBrdRa .TPlayerCn>div,
+.NoBrdRa .TPlayer,
+.NoBrdRa .TPlayer iframe,
+.NoBrdRa .TPlayer video,
+.NoBrdRa .TPlayer object,
+.NoBrdRa .TPlayer embed {
+    border-radius: 3px !important;
+}
+
+.AZList>li:before,
+.MenuFt>ul>li>a:hover,
+.Button.STPb,
+.MovieListSldCn:before,
+.wp-pagenavi a:after,
+.wp-pagenavi span:after,
+.Wdgt:before,
+.Wdgt>.Title:before,
+.SearchMovies .sol-label:before,
+.sol-selected-display-item,
+.trsrclst>li,
+.trsrcbx label:before {
+    background-color: var(--bg-primary);
+}
+
+
+
+
+.widget_categories>ul {
+    max-height: 300px;
+    overflow: auto;
+    padding-right: 5px
+}
+
+.widget_categories>ul li {
+    margin-bottom: .5rem;
+    position: relative;
+    text-align: right;
+    padding: 0 1rem;
+    line-height: 30px;
+    border-radius: 15px;
+    font-size: .625rem;
+    transition: .2s;
+    height: 30px
+}
+
+.widget_categories>ul li:last-child {
+    margin-bottom: 0
+}
+
+.widget_categories>ul li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    font-size: .875rem;
+    font-weight: 400;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.widget_categories>ul li:hover a {
+    color: currentColor
+}
+
+.widget_categories .postform {
+    margin-bottom: 0
+}
+
+.Wdgt .MovieList>li:last-child {
+    margin-bottom: 0
+}
+
+ul.MovieList.Newepisode li a {
+    color: #ccc;
+    padding: 7px 0;
+}
+
+.play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.play::before {
+    content: "\25B6";
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+
+.Image:hover .play {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+.category-container {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+}
+
+.category-box {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 9px;
+}
+
+
+form {
+    margin-bottom: 0;
+}
+
+
+
+[class*=Form-] input,
+[class*=Form-] button,
+[class*=Form-] textarea,
+[class*=Form-] select,
+[class*=Form-] .Form-Select {
+    margin-bottom: 0;
+}
+
+input,
+select {
+    height: 2.5rem;
+    line-height: normal;
+}
+
+input,
+textarea,
+select,
+.Form-Select label {
+    display: block;
+    padding: .5rem 1rem;
+    width: 100%;
+}
+
+input,
+textarea,
+select,
+.Form-Select label {
+    color: inherit;
+    border-radius: 20px;
+    border: 0;
+}
+
+input,
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font: inherit;
+    width: 104%;
+    vertical-align: middle;
+    line-height: normal;
+    text-align: center;
+}
+
+.list-movie-filter {
+    overflow: visible;
+    position: relative;
+    display: block;
+}
+
+.list-movie-filter .list-movie-filter-main {
+    color: #ddd;
+    display: block;
+}
+
+.list-movie-filter .list-movie-filter-item select {
+    background: #222;
+}
+
+.list-movie-filter .list-movie-filter-item {
+    float: left;
+    margin: 0 6px;
+    width: 150px;
+}
+
+.SearchMovies .Form-Group {
+    position: relative;
+}
+
+.btn-filter-movie {
+    position: relative;
+    top: 1px;
+    padding: 9px 26px;
+    right: -10px;
+    background-color: #222;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-filter-movie:hover {
+    background-color: #b71c1c;
+    color: white;
+}
+
+@media screen and (min-width: 48em) {
+
+    .TPost.Single .Title,
+    .TPost.Single .SubTitle {
+        white-space: nowrap;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    .TPost.Single header {
+        min-height: 209px;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .TPost.Single header {
+        padding-left: 206px;
+        position: relative;
+    }
+}
+
+.AZList>li.Current>a,
+.AZList>li>a:hover,
+.Button,
+.Button.STPa:hover,
+.InfoList strong,
+.ListSocial a,
+.MenuFt>ul>li>a:hover,
+.MnBr .Menu>ul>li>a,
+.Qlty,
+.Search .Form-Icon input,
+.TPlayer .Title,
+.TPlayer .lgtbx-lnk,
+.TPost .Top.Num1,
+.TPost.B .Title,
+.TPost.Single,
+.TPost.Single a,
+.qtip,
+.sol-selected-display-item,
+.trsrclst>li,
+.widget_categories>ul li:hover,
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current,
+a.Button,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+    color: #fff;
+}
+
+
+
+
+@media screen and (min-width: 48em) {
+    .TPost.Single header {
+        padding-left: 200px;
+        position: relative;
+        min-height: 280px;
+    }
+}
+
+.TPost.Single footer {
+    border-top-color: rgba(255, 255, 255, .2);
+}
+
+.TPost.Single footer {
+    padding-top: 19px;
+    border-top: 1px solid transparent;
+}
+
+
+@media screen and (min-width: 48em) {
+    .TPost.Single .SubTitle {
+        margin-bottom: 27px;
+    }
+}
+
+@media screen and (min-width: 48em) {
+
+    .TPost.Single .Title,
+    .TPost.Single .SubTitle {
+        white-space: nowrap;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+.TPost.Single .SubTitle {
+    font-size: 1rem;
+    line-height: 20px;
+    margin-bottom: 1.25rem;
+}
+
+#MvTb-Image,
+#MvTb-Cast,
+#MvTb-Info {
+    padding: 20px;
+}
+
+.MvTbCn.on {
+    display: block;
+}
+
+.MovieInfo .mvici-left {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+}
+
+.MovieInfo .InfoList {
+    color: #d7d7d7;
+    font-size: 12px;
+}
+
+.InfoList>li {
+    line-height: 25px;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.MovieInfo .mvici-right {
+    float: left;
+    width: 50%;
+}
+
+section,
+.MovieList,
+.watch-more {
+    background-color: #0c0c0c !important;
+
+    border-radius: 3px !important;
+
+    padding: 15px !important;
+    margin: 10px 0 !important;
+}
+
+
+.WebDescription {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.Copy {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.footer-line {
+    width: 100%;
+    height: 1px;
+    background-color: #666;
+    margin: 20px 0;
+
+}

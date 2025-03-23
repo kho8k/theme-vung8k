@@ -1,0 +1,213 @@
+.MovieTabNav .Lnk.on {
+    font-size: 0.875rem;
+    border-bottom-color: currentColor;
+}
+
+@media screen and (min-width: 48em) {
+    .MovieTabNav .Lnk {
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (min-width: 34em) {
+    .MovieTabNav .Lnk {
+        margin-right: 2.5rem;
+    }
+}
+
+.MovieTabNav.ControlPlayer {
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.MovieTabNav {
+    border-bottom: 1px solid transparent;
+    font-size: 0;
+    background: var(--bg-main);
+    padding: 20px 10px 10px;
+}
+
+.MovieTabNav .Lnk {
+    white-space: nowrap;
+    line-height: 1.25rem;
+    cursor: pointer;
+    padding-bottom: 1.25rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1.25rem;
+    margin-bottom: -1px;
+    position: relative;
+    font-weight: 400;
+    box-shadow: none !important;
+    border-bottom: 3px solid transparent
+}
+
+.MovieTabNav .Lnk:last-child {
+    margin-right: 0
+}
+
+.MovieTabNav .Lnk,
+.MovieTabNav .Lnk:before,
+.MovieTabNav .Lnk:after {
+    transition: .2s
+}
+
+.MovieTabNav .Lnk:before {
+    font-size: 1.25rem;
+    margin-right: .5rem;
+    opacity: .5
+}
+
+.MovieTabNav .Lnk.on {
+    font-size: .875rem;
+    border-bottom-color: currentColor;
+    color: #ecc761;
+}
+
+.MovieTabNav .Lnk.on:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -7px
+}
+
+.MovieTabNav .Lnk.on:before {
+    opacity: 1;
+    color: #ecc761;
+
+}
+
+ul.server-list {
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li.backup-server {
+    list-style: none;
+    padding: 5px;
+    margin: 10px auto;
+    border: 1px solid #7c7777;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    background-color: #121212;
+    gap: 5px;
+}
+
+.backup-server .server-title {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: #e3b71e;
+    color: #000;
+    padding: 7px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.backup-server a.btn-episode {
+
+    font-weight: 700;
+    background-color: #121212;
+    color: #fff;
+    border-radius: 3px;
+    margin-left: 5px;
+    padding: 7px 10px;
+    text-decoration: none;
+
+}
+
+.backup-server a.btn-episode.active {
+    background-color: #e62117;
+    font-weight: 700;
+    color: #fff;
+    padding: 5px;
+}
+
+.backup-server a.btn-episode:hover {
+    background-color: #e3b71e;
+    color: #000;
+}
+
+
+@media screen and (max-width: 970px) {
+
+    .ControlPlayer #btn-light,
+    .ControlPlayer #btn-expand,
+    #btn-re-expand,
+    #btn-toggle-capture {
+        display: none !important;
+    }
+}
+
+#watch-block.expand .btn-re-expand {
+    display: block !important;
+}
+
+.btn-re-expand {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: .2s;
+    display: none !important;
+    margin-right: -50px;
+    background: rgba(255, 255, 255, .1);
+}
+
+.btn3d {
+    margin: 1px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 3px 3px 2px 2px;
+    outline: 0;
+    box-sizing: content-box;
+    display: inline-block;
+    vertical-align: baseline;
+    padding: 0 !important;
+    width: 88%;
+}
+
+
+.btn3d.black {
+    color: #f1f1f1;
+    background-color: #323232;
+}
+
+.btn3d.active:visited {
+    background: #e62117;
+    color: #ffff;
+}
+
+a.btn-episode:hover {
+    background-color: #ecc761;
+    color: #702526;
+}
+
+.btn3d.active {
+    color: #e62117;
+    background-color: #ffff;
+}
