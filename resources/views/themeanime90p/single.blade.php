@@ -268,13 +268,25 @@
                 </div>
             @endforeach
         </div>
-        <div class="Wdgt">
-            <div class="Title">Bình luận</div>
-            <div style="width: 100%; background-color: #fff">
-                <div class="fb-comments" data-href="{{ $currentMovie->getUrl() }}" data-width="100%"
-                    data-colorscheme="light" data-numposts="5" data-order-by="reverse_time" data-lazy="true"></div>
-            </div>
-        </div>
+                        <div class="Wdgt">
+                    <div class="Title">Bình luận</div>
+                    <div style="width: 100%; background-color: #fff">
+                        <div class="fb-comments" 
+                            data-href="{{ $currentMovie->getUrl() }}" 
+                            data-width="100%"
+                            data-numposts="5" 
+                            data-order-by="reverse_time" 
+                            data-lazy="true">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facebook SDK -->
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" 
+                    src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0">
+                </script>
+
         <div class="Wdgt">
             <div class="Title">Có thể bạn muốn xem?</div>
             <div class="MovieListRelated owl-carousel">
