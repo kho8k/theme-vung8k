@@ -23,10 +23,6 @@
             <li>
                 <div class="TPost A">
                     <a rel="bookmark" href="{{ $movie->getUrl() }}">
-                    <!-- <div class="number_movie" >
-                            <span class="number-top"
-                                >{{ $loop->iteration }}</span>
-                    </div> -->
                         <div class="Image">
                             <figure class="Objf TpMvPlay AAIco-play_arrow"><img width="55" height="85"
                                     data-src="{{ $movie->getThumbUrl() }}"
@@ -37,6 +33,7 @@
                         <div class="list_info_movie">
                         <div class="list_top_name">{{ $movie->name }}</div>
                         <div class="list_top_view">{{ formatViews($movie->view_week) }} lượt xem</div>
+                         <!-- {{ formatViews($movie->view_total) }}  -->
                         <div class="list_top_star">Điểm :{{ formatViews($movie->getRatingStar())}} </div>
                     </div>
                     </a>

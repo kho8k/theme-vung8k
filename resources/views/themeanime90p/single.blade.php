@@ -61,17 +61,23 @@
                 </div>
             </div>
         @endif
-        <article class="MovieDetail">
-    <header>
+        <div class="MovieDetail">
+        <div>
         <div class="MovieDetail-Image">
-            <figure class="MovieDetail-Objf">
-                <img width="180" height="260" src="{{ $currentMovie->getThumbUrl() }}"
-                    class="MovieDetail-Thumb"
-                    alt="{{ $currentMovie->name }} - {{ $currentMovie->origin_name }}" />
-            </figure>
+        <figure class="MovieDetail-Objf">
+            <img width="180" height="260" src="{{ $currentMovie->getThumbUrl() }}"
+                class="MovieDetail-Thumb"
+                alt="{{ $currentMovie->name }} - {{ $currentMovie->origin_name }}" />
+        </figure>
+        <div class="playVideo">
+            <a class="play-button" href="{{ $currentMovie->episodes->sortBy([['server', 'asc']])->groupBy('server')->first()->sortByDesc('name', SORT_NATURAL)->groupBy('name')->last()->sortByDesc('type')->first()->getUrl() }}">
+                <i class="fa fa-play"></i>
+            </a>
         </div>
+    </div>
+
         <h1 class="MovieDetail-Title">{{ $currentMovie->name }}</h1>
-        <h2 class="MovieDetail-SubTitle">{{ $currentMovie->origin_name }}</h2>
+        <h2 class="MovieDetail-SubTitle">{{ $currentMovie->origin_name }} ({{ $currentMovie->publish_year }})</h2>
 
              <div class="MovieDetail-VotesCn">
                 <div class="MovieDetail-Prct">
@@ -89,7 +95,6 @@
             <strong class="num-rating">({{$currentMovie->getRatingCount()}}</strong> lượt, đánh giá: <strong
                             id="average_score">{{$currentMovie->getRatingStar()}}</strong>
                         trên 10)<br />
-                <!-- <span class="ratings-text" id="MovieDetail-hint"></span> -->
                 <span class="post-ratings-text" id="hint"></span>
             </div>
             <div style="display: none;" itemprop="aggregateRating" itemscope
@@ -100,64 +105,41 @@
                         <meta itemprop="worstRating" content="1" />
                     </div>
         </div>
-
-    </header>
-    <footer class="MovieDetail-info_bottom">
-    <p class="MovieDetail-Info">
-        <span><i class="fas fa-clock"></i> {{ $currentMovie->episode_time ?? 'N/A' }}</span>
-        <span><i class="fas fa-calendar"></i> {{ $currentMovie->publish_year }}</span>
-        <span><i class="fas fa-eye"></i> {{ ($currentMovie->view_total) }} lượt xem</span>
-    </p>
-    <a class="MovieDetail-watch_button" title="{{ $currentMovie->name }} - {{ $currentMovie->origin_name }}"
+        <a class="MovieDetail-watch_button" title="{{ $currentMovie->name }} - {{ $currentMovie->origin_name }}"
         href="{{ $currentMovie->episodes->sortBy([['server', 'asc']])->groupBy('server')->first()->sortByDesc('name', SORT_NATURAL)->groupBy('name')->last()->sortByDesc('type')->first()->getUrl() }}">
-        <i class="fas fa-play"></i> Xem Phim
-    </a>
-</footer>
+         Xem Phim <i class="fa fa-play"></i>
+            </a>
 
-   
-</article>
+    <a class="MovieDetail-watch_button" id="watchTrailerBtn" title="{{ $currentMovie->name }} - {{ $currentMovie->origin_name }}"
+    href="">
+    Xem Trailer <i class="fa fa-play"></i>
+</a>
 
-        <div class="MovieInfo TPost Single">
-            <div class="MovieTabNav">
-                <div class="Lnk on AAIco-description" data-Mvtab="MvTb-Info">Thông tin phim</div>
-                <div class="Lnk  AAIco-description" data-Mvtab="MvTb-Info-movie">Mô Tả phim</div>
-                @if (count($currentMovie->actors))
-                <div class="Lnk AAIco-movie_filter" data-Mvtab="MvTb-Cast">Diễn viên</div>
-                @endif
-                @if ($currentMovie->trailer_url)
-                <div class="Lnk AAIco-video_call" data-Mvtab="MvTb-Trailer">Trailer</div>
-                @endif
-                <div class="Lnk AAIco-collections" data-Mvtab="MvTb-Image">Hình ảnh</div>
-            </div>
-            <div class="MvTbCn on anmt" id="MvTb-Info">
+<!-- Popup Trailer -->
+                    <div id="customOverlay">
+                    <div class="customPopup" id="MvTb-Trailer" style="display: none;">
+                        @php
+                            parse_str(parse_url($currentMovie->trailer_url, PHP_URL_QUERY), $parse_url);
+                            $trailer_id = $parse_url['v'];
+                        @endphp
+                        <div class="customPopupContent">
+                            <iframe id="trailerFrame" width="560" height="315" src=""></iframe>
+                        </div>
+                    </div>
+                    </div>
+</div>
+    <h2 class="MovieDetail-Infomation">Thông tin phim :</h2>
                 <div class="mvici-left">
-                    <ul class="InfoList">
-                        <li class="AAIco-adjust latest_eps"><strong>Tập mới:</strong>
-                            @if (!$currentMovie->is_copyright && count($currentMovie->episodes) && $currentMovie->episodes[0]['link'] != '')
-                                @php
-                                    $currentMovie->episodes
-                                        ->sortBy([['name', 'desc'], ['type', 'desc']])
-                                        ->sortByDesc('name', SORT_NATURAL)
-                                        ->unique('name')
-                                        ->take(3)
-                                        ->map(function ($episode) {
-                                            echo '<a href="' . $episode->getUrl() . '">' . $episode->name . '</a>';
-                                        });
-                                @endphp
-                            @else
-                                Phim đang được cập nhật...
-                            @endif
-                        </li>
-                        <li class="AAIco-adjust"><strong>Trạng thái:</strong>
+                <li class=""><strong>Trạng thái:</strong>
                             {{ $currentMovie->episode_current }}
+                    </li>
+
+                        <li class=""><strong>Thời lượng:</strong>
+                            {{ $currentMovie->episode_time ?: "Đang cập nhật" }}
                         </li>
-                        <li class="AAIco-adjust"><strong>Thể loại:</strong>
-                            {!! $currentMovie->categories->map(function ($category) {
-                                    return '<a href="' . $category->getUrl() . '" title="' . $category->name . '">' . $category->name . '</a>';
-                                })->implode(', ') !!}
-                        </li>
+
                         @if (count($currentMovie->directors))
-                            <li class="AAIco-adjust"><strong>Đạo diễn:</strong>
+                            <li class=""><strong>Đạo diễn:</strong>
                                 {!! $currentMovie->directors->map(function ($director) {
                                         return '<a href="' .
                                             $director->getUrl() .
@@ -168,39 +150,53 @@
                                             '</a>';
                                     })->implode(', ') !!}
                             </li>
-                        @endif
-                        <li class="AAIco-adjust"><strong>Quốc gia:</strong>
+                            @endif
+
+                            <li class=""><strong>Thể loại:</strong>
+                            {!! $currentMovie->categories->map(function ($category) {
+                                    return '<a href="' . $category->getUrl() . '" title="' . $category->name . '">' . $category->name . '</a>';
+                                })->implode(', ') !!}
+                        </li>
+
+                        <li class=""><strong>Quốc gia:</strong>
                             {!! $currentMovie->regions->map(function ($region) {
                                     return '<a href="' . $region->getUrl() . '" title="' . $region->name . '">' . $region->name . '</a>';
                                 })->implode(', ') !!}
                         </li>
-                    </ul>
-                </div>
-                <div class="mvici-right">
-                    <ul class="InfoList">
-                        <li class="AAIco-adjust"><strong>Thời lượng:</strong>
-                            {{ $currentMovie->episode_time ?: "Đang cập nhật" }}
-                        </li>
-                        <li class="AAIco-adjust"><strong>Tổng số tập:</strong>
+
+                        <li class=""><strong>Tổng số tập:</strong>
                             {{ $currentMovie->episode_total ?: "Đang cập nhật" }}
                         </li>
-                        <li class="AAIco-adjust"><strong>Độ phân giải:</strong> <span
-                                class="quality">{{ $currentMovie->quality }}</span></li>
-                        <li class="AAIco-adjust"><strong>Ngôn ngữ:</strong> <span
+                        <li class=""><strong>Ngôn ngữ:</strong> <span
                                 class="imdb">{{ $currentMovie->language }}</span>
                         </li>
-                    </ul>
+                     <div id="mv-keywords">
+            <strong class="mr10">TAGS:</strong>
+            @foreach ($currentMovie->tags as $tag)
+                <a href="{{ $tag->getUrl() }}" rel="follow, index"
+                    title="{{ $tag->name }}">{{ $tag->name }},</a>
+            @endforeach
+        </div>            
                 </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="MvTbCn anmt" id="MvTb-Info-movie">
+                
                 <div class="content-movie">
                     {{$currentMovie->content  }}
                 </div>
-            </div>
+           
+                       
+</div>
 
+        <div class="MovieInfo TPost Single">
+            <div class="MovieTabNav">
+                
+                @if (count($currentMovie->actors))
+                <div class="Lnk on AAIco-movie_filter " data-Mvtab="MvTb-Cast" >Diễn viên</div>
+                @endif
+                
+                <div class="Lnk AAIco-collections" data-Mvtab="MvTb-Image">Hình ảnh</div>
+            </div>
             @if (count($currentMovie->actors))
-                <div class="MvTbCn anmt" id="MvTb-Cast">
+                <div class="MvTbCn on anmt" id="MvTb-Cast">
                     <ul class="ListCast Rows AF A06 B03 C02 D20 E02">
                         {!! $currentMovie->actors->map(function ($actor) {
                                 return '<li><a href="' .
@@ -216,26 +212,7 @@
                     </ul>
                 </div>
             @endif
-            @if ($currentMovie->trailer_url)
-            <div class="MvTbCn anmt clearfix" id="MvTb-Trailer">
-                @php
-                    parse_str(parse_url($currentMovie->trailer_url, PHP_URL_QUERY), $parse_url);
-                    $trailer_id = $parse_url['v'];
-                @endphp
-                <div class="TPlayerCn BgA">
-                    <div class="EcBgA">
-                        <div class="TPlayer">
-                            <div class="TPlayerTb Current clearfix" id="Opt1">
-
-                                <iframe width="560" height="315"
-                                    src="https://www.youtube.com/embed/{{ $trailer_id }}"></iframe>
-                            </div>
-                            <span class="AAIco-lightbulb_outline lgtbx-lnk"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endif
+            
             <div class="MvTbCn anmt" id="MvTb-Image">
                 <div class="ImageMovieList owl-carousel">
                     <div class="item active">
@@ -280,43 +257,39 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Facebook SDK -->
                 <div id="fb-root"></div>
                 <script async defer crossorigin="anonymous" 
                     src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0">
                 </script>
 
-        <div class="Wdgt">
-            <div class="Title">Có thể bạn muốn xem?</div>
-            <div class="MovieListRelated owl-carousel">
-                @foreach ($movie_related as $movie)
-                    <div class="TPostMv">
-                        <div class="TPost B">
-                            <a href="{{ $movie->getUrl() }}">
-                                <div class="Image">
-                                    <figure class="Objf TpMvPlay AAIco-play_arrow"><img width="215" height="320"
-                                            src="{{ $movie->getThumbUrl() }}"
-                                            class="attachment-thumbnail size-thumbnail wp-post-image"
-                                            alt="{{ $movie->name }} - {{ $movie->origin_name }} ({{ $movie->publish_year }})"
-                                            title="{{ $movie->name }} - {{ $movie->origin_name }} ({{ $movie->publish_year }})" />
-                                    </figure>
-                                    <span class="mli-quality">{{ $movie->quality }}</span>
-                                    <div class="Title">{{ $movie->name }}</div>
-                                </div>
-                            </a>
+<div class="Wdgt">
+    <div class="Title">Có thể bạn muốn xem?</div>
+    <div class="MovieListRelated owl-carousel">
+        @foreach ($movie_related as $movie)
+            <div class="TPostMv">
+                <div class="TPost B">
+                    <a href="{{ $movie->getUrl() }}">
+                        <div class="Image">
+                            <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                <img width="215" height="320"
+                                    src="{{ $movie->getThumbUrl() }}"
+                                    class="attachment-thumbnail size-thumbnail wp-post-image"
+                                    alt="{{ $movie->name }} - {{ $movie->origin_name }} ({{ $movie->publish_year }})"
+                                    title="{{ $movie->name }} - {{ $movie->origin_name }} ({{ $movie->publish_year }})" />
+                            </figure>
+                            <span class="mli-quality">{{ $movie->quality }}</span>
+                            <div class="Overlay">
+                                <div class="Title">{{ $movie->name }}</div>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    </a>
+                </div>
             </div>
-        </div>
-        <div id="mv-keywords">
-            <strong class="mr10">Từ khóa:</strong>
-            @foreach ($currentMovie->tags as $tag)
-                <a href="{{ $tag->getUrl() }}" rel="follow, index"
-                    title="{{ $tag->name }}">{{ $tag->name }},</a>
-            @endforeach
-        </div>
+        @endforeach
+    </div>
+</div>
+
+        
     </main>
 @endsection
 
@@ -328,6 +301,34 @@
     <script type="text/javascript" src="/themes/anime90p/js/film.notiny.js"></script>
     <script type="text/javascript" src="/themes/anime90p/js/jquery.raty.js"></script>
     <script type="text/javascript" src="/themes/anime90p/js/film.rating.js"></script>
+        <script> 
+            document.addEventListener("DOMContentLoaded", function () {
+        var trailerBtn = document.getElementById("watchTrailerBtn");
+        var popup = document.getElementById("MvTb-Trailer");
+        var overlay = document.getElementById("customOverlay");
+        var trailerFrame = document.getElementById("trailerFrame");
+
+        var trailerUrl = "https://www.youtube.com/embed/{{ $trailer_id }}";
+
+        if (trailerBtn && popup && overlay) {
+            trailerBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                trailerFrame.src = trailerUrl;
+                popup.style.display = "block";
+                overlay.style.display = "block";
+            });
+
+        
+            overlay.addEventListener("click", function () {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+                trailerFrame.src = ""; 
+            });
+        }
+    });
+        
+    </script>
+   
 
     {!! setting('site_scripts_facebook_sdk') !!}
 @endpush

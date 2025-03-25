@@ -13,10 +13,6 @@
         margin-right: 2rem
     }
 
-    .Menu>ul>li>a {
-        line-height: 60px
-    }
-
     .Menu .menu-item-has-children {
         position: relative
     }
@@ -35,8 +31,8 @@
     }
 
     .Menu .sub-menu {
-        left: 1rem;
-        width: 400px;
+        left: 0rem;
+        width: 413px;
         border-top-color: #aab71c;
     }
 
@@ -333,18 +329,61 @@
 }
 
 .MovieDetail-Image {
+    position: relative;
     text-align: center;
-
+    display: inline-block;
+    overflow: hidden;
 }
 
 .MovieDetail-Image img {
-    width: 900px;
+    width: 975px;
     height: 414px;
     border-radius: 10px;
     display: block;
     margin: auto;
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+.playVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    border: 2px solid #fff;
+}
+
+
+.MovieDetail-Image:hover .playVideo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.MovieDetail-Image:hover img {
+    filter: grayscale(20%);
+    opacity: 0.7;
 
 }
+
+.playVideo i {
+    color: white;
+    font-size: 28px;
+}
+
+
+
+
 
 .MovieDetail-Title {
     font-size: 24px;
@@ -352,6 +391,8 @@
     color: #ecc761;
     margin-top: 10px;
 }
+
+
 
 .MovieDetail-SubTitle {
     font-size: 18px;
@@ -456,20 +497,32 @@
 }
 
 .MovieDetail-watch_button {
-    background: #ecc761;
-    color: #060303e6;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
+
+
+    color: #cdcdcd;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 0 9px 0 12px;
+    margin-top: 10px;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    font-weight: 100;
+    line-height: 37px;
+    transition: .1s;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-top: 20px;
 }
 
+
 .MovieDetail-watch_button:hover {
-    background: #ecc761;
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.MovieDetail-watch_button i {
+    font-size: 10px;
 }
 
 .TPost.Single {
@@ -478,6 +531,128 @@
     padding: 1.25rem;
     margin-bottom: 1.25rem
 }
+
+
+#customOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+
+}
+
+
+.customPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    padding: 5px;
+    border-radius: 10px;
+    z-index: 9999;
+    width: auto;
+    max-width: 80%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+
+.customPopupContent iframe {
+    width: 560px;
+    height: 315px;
+    max-width: 100%;
+    border: none;
+}
+
+.MovieDetail-Infomation {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ecc761;
+    margin-top: 10px;
+}
+
+.mvici-left {
+    list-style: none;
+    padding: 0;
+}
+
+.mvici-left li {
+    color: #d6d6d6;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.mvici-left li strong {
+    color: #888;
+    flex: 0 0 auto;
+    margin-right: 5px;
+}
+
+.mvici-left li a {
+    color: #ecc761;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.mvici-left li a:hover {
+    color: yellow;
+}
+
+.imdb {
+    background: #ecc761;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+#mv-keywords strong {
+    color: #ecc761;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#mv-keywords a {
+    color: #777;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#mv-keywords a:hover {
+    color: #ecc761;
+}
+
+#mv-keywords {
+    margin-bottom: 5px;
+    padding: 10px;
+    display: block;
+    clear: both;
+    background: var(--bg-primary);
+    margin-top: -10px;
+    word-wrap: break-word;
+    margin-left: -11px;
+}
+
+.content-movie {
+    color: #d6d6d6;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
 
 .TPostBg.Objf,
 div#MvTb-Info {
@@ -633,7 +808,7 @@ div#MvTb-Info {
 }
 
 .server-group .list-episode {
-    max-height: 300px;
+    max-height: 200px;
     overflow: auto;
 }
 
@@ -693,23 +868,7 @@ nav ul,
     cursor: pointer;
 }
 
-#mv-keywords {
-    margin-bottom: 5px;
-    padding: 10px;
-    display: block;
-    clear: both;
-    background: var(--bg-primary);
-    margin-top: -10px;
-    word-wrap: break-word;
-}
 
-.MovieListRelated .TPostMv,
-.MovieListTop .TPostMv {
-    padding: 0 .6rem;
-}
-
-
-/* thong tin phim */
 
 .Menu>ul>li:hover:before,
 .Menu>ul>li.current-menu-item:before,
@@ -734,6 +893,7 @@ nav ul,
     color: #ecc761;
 }
 
+
 .MovieListRelated .TPostMv {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -743,9 +903,35 @@ nav ul,
     filter: brightness(1.2);
 }
 
-.MovieListRelated .TPostMv:hover .Title {
-    color: yellow;
+
+.MovieListRelated .TPostMv,
+.MovieListTop .TPostMv {
+    padding: 0 .6rem;
+    padding-bottom: 25px;
 }
+
+
+.MovieListRelated .TPostMv .Overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+
+    text-align: center;
+    padding: 10px 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.MovieListRelated .TPostMv:hover .Overlay {
+    opacity: 0;
+}
+
+
+.MovieListRelated .TPostMv:hover img {
+    filter: brightness(0.7);
+}
+
 
 
 .imdb {
@@ -783,14 +969,7 @@ nav ul,
 }
 
 
-.MovieListTopCn {
-    margin: 0 -.6rem 1.25rem
-}
 
-.MovieListRelated .TPostMv,
-.MovieListTop .TPostMv {
-    padding: 0 .6rem
-}
 
 .TPMvCn>.Button {
     vertical-align: top
@@ -825,7 +1004,7 @@ span.mli-quality {
     right: 0px;
     top: 8px;
     width: auto;
-    font-family: helvetica neue, Helvetica, Arial, sans-serif;
+    font-family: Poppins, sans-serif;
 }
 
 .owl-controls .owl-prev {
@@ -839,7 +1018,7 @@ span.mli-quality {
     top: 50%;
     z-index: 2;
     opacity: .9;
-    margin: -17px 5px 0;
+    margin: -50px 5px 0;
     width: 16px;
     border-radius: 0;
     padding: 6px 17px 6px 8px;

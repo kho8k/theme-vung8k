@@ -3,8 +3,9 @@
         <h2>
             <a href="{{ $item['link'] }}">{{ $item['label'] }} </a>
         </h2>
-        <span class="icon-arrow">▶</span>
-        <a href="{{ $item['link'] }}" class="icon-plus">+</a>
+        <span class="icon-arrow"><i class="fa fa-play"></i></span>
+        <a href="{{ $item['link'] }}" class="icon-plus"><i class="fa fa-plus"></i></a>
+
     </div>
     <ul class="MovieList Rows AX A06 B04 C03 E20">
         @foreach ($item['data'] as $movie)

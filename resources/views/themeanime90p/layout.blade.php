@@ -63,9 +63,7 @@ if (!function_exists('formatViews')) {
 
 
 @push('header')
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('/themes/anime90p/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/themes/anime90p/css/fonts.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/themes/anime90p/css/layoutStyle.css') }}" />
