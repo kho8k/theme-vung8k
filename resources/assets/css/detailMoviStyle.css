@@ -333,6 +333,7 @@
     text-align: center;
     display: inline-block;
     overflow: hidden;
+    /* Tránh hiệu ứng lem ra ngoài */
 }
 
 .MovieDetail-Image img {
@@ -344,7 +345,7 @@
     transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-
+/* ẨN NÚT PLAY MẶC ĐỊNH */
 .playVideo {
     position: absolute;
     top: 50%;
@@ -353,6 +354,7 @@
     width: 60px;
     height: 60px;
     background: rgba(0, 0, 0, 0.6);
+    /* Nền tối */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -360,11 +362,12 @@
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
+    /* Ẩn nút play */
     visibility: hidden;
     border: 2px solid #fff;
 }
 
-
+/* HIỆN NÚT PLAY VÀ LÀM ẢNH MỜ ĐI KHI DI CHUỘT VÀO */
 .MovieDetail-Image:hover .playVideo {
     opacity: 1;
     visibility: visible;
@@ -372,8 +375,9 @@
 
 .MovieDetail-Image:hover img {
     filter: grayscale(20%);
+    /* Làm ảnh mờ màu xám */
     opacity: 0.7;
-
+    /* Giảm độ sáng */
 }
 
 .playVideo i {
@@ -532,7 +536,8 @@
     margin-bottom: 1.25rem
 }
 
-
+/* Nền overlay khi mở popup */
+/* Overlay phủ toàn màn hình nhưng không phá layout */
 #customOverlay {
     display: none;
     position: fixed;
@@ -541,11 +546,12 @@
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
+    /* Nền tối nhẹ */
     z-index: 9998;
-
+    /* Đặt dưới popup */
 }
 
-
+/* Popup canh giữa màn hình */
 .customPopup {
     display: none;
     position: fixed;
@@ -556,12 +562,13 @@
     padding: 5px;
     border-radius: 10px;
     z-index: 9999;
+    /* Cao hơn overlay */
     width: auto;
     max-width: 80%;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-
+/* Giữ nguyên kích thước iframe mà không phá layout */
 .customPopupContent iframe {
     width: 560px;
     height: 315px;
@@ -587,12 +594,14 @@
     margin-bottom: 5px;
     display: flex;
     flex-wrap: wrap;
+    /* Cho phép nội dung tự động xuống dòng */
     gap: 5px;
 }
 
 .mvici-left li strong {
     color: #888;
     flex: 0 0 auto;
+    /* Đảm bảo tiêu đề không bị xuống dòng */
     margin-right: 5px;
 }
 

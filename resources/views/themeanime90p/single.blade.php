@@ -113,9 +113,7 @@
     <a class="MovieDetail-watch_button" id="watchTrailerBtn" title="{{ $currentMovie->name }} - {{ $currentMovie->origin_name }}"
     href="">
     Xem Trailer <i class="fa fa-play"></i>
-</a>
-
-<!-- Popup Trailer -->
+                </a>
                     <div id="customOverlay">
                     <div class="customPopup" id="MvTb-Trailer" style="display: none;">
                         @php
@@ -127,8 +125,8 @@
                         </div>
                     </div>
                     </div>
-</div>
-    <h2 class="MovieDetail-Infomation">Thông tin phim :</h2>
+                    </div>
+        <h2 class="MovieDetail-Infomation">Thông tin phim :</h2>
                 <div class="mvici-left">
                 <li class=""><strong>Trạng thái:</strong>
                             {{ $currentMovie->episode_current }}
@@ -179,9 +177,9 @@
         </div>            
                 </div>
                 
-                <div class="content-movie">
+                <article class="content-movie">
                     {{$currentMovie->content  }}
-                </div>
+                </article>
            
                        
 </div>
