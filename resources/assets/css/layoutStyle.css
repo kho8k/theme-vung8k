@@ -13,6 +13,108 @@
     background-color: var(--bg-primary);
 }
 
+.Column {
+    margin-left: auto;
+    margin-right: auto
+}
+
+[class*=Row] .Column {
+    margin-left: 0;
+    margin-right: 0
+}
+
+.AF.Rows>* {
+    float: left
+}
+
+.AX[class*=Row] {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap
+}
+
+.AX.Rows>*,
+.AX.Row.AFluid>.AFixed {
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+    max-width: 100%
+}
+
+.AX.Row.AFluid>* {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.Column.A01,
+.Rows.A01>* {
+    width: 8.33333333%
+}
+
+.Column.A02,
+.Rows.A02>* {
+    width: 16.66666667%
+}
+
+.Column.A20,
+.Rows.A20>* {
+    width: 20%
+}
+
+.Column.A03,
+.Rows.A03>* {
+    width: 25%
+}
+
+.Column.A04,
+.Rows.A04>* {
+    width: 33.33333333%
+}
+
+.Column.A05,
+.Rows.A05>* {
+    width: 41.66666667%
+}
+
+.Column.A06,
+.Rows.A06>* {
+    width: 50%
+}
+
+.Column.A07,
+.Rows.A07>* {
+    width: 58.33333333%
+}
+
+.Column.A08,
+.Rows.A08>* {
+    width: 66.66666667%
+}
+
+.Column.A09,
+.Rows.A09>* {
+    width: 75%
+}
+
+.Column.A10,
+.Rows.A10>* {
+    width: 83.33333333%
+}
+
+.Column.A11,
+.Rows.A11>* {
+    width: 91.66666667%
+}
+
+.Column.A12,
+.Rows.A12>* {
+    width: 100%
+}
+
 *,
 :before,
 :after {
@@ -69,6 +171,102 @@ html {
 
 ::-webkit-scrollbar {
     background-color: rgba(0, 0, 0, .3)
+}
+
+
+
+@media screen and (min-width:48em) {
+    .CF.Rows>* {
+        float: left
+    }
+
+    .CX[class*=Row] {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap
+    }
+
+    .CX.Rows>*,
+    .CX.Row.CFluid>.CFixed {
+        -webkit-flex: none;
+        -ms-flex: none;
+        flex: none;
+        max-width: 100%
+    }
+
+    .CX.Row.CFluid>* {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1
+    }
+
+    .Column.C01,
+    .Rows.C01>* {
+        width: 8.33333333%
+    }
+
+    .Column.C02,
+    .Rows.C02>* {
+        width: 16.66666667%
+    }
+
+    .Column.C20,
+    .Rows.C20>* {
+        width: 20%
+    }
+
+    .Column.C03,
+    .Rows.C03>* {
+        width: 25%
+    }
+
+    .Column.C04,
+    .Rows.C04>* {
+        width: 33.33333333%
+    }
+
+    .Column.C05,
+    .Rows.C05>* {
+        width: 41.66666667%
+    }
+
+    .Column.C06,
+    .Rows.C06>* {
+        width: 50%
+    }
+
+    .Column.C07,
+    .Rows.C07>* {
+        width: 58.33333333%
+    }
+
+    .Column.C08,
+    .Rows.C08>* {
+        width: 66.66666667%
+    }
+
+    .Column.C09,
+    .Rows.C09>* {
+        width: 75%
+    }
+
+    .Column.C10,
+    .Rows.C10>* {
+        width: 83.33333333%
+    }
+
+    .Column.C11,
+    .Rows.C11>* {
+        width: 91.66666667%
+    }
+
+    .Column.C12,
+    .Rows.C12>* {
+        width: 100%
+    }
 }
 
 @media screen and (min-width:62em) {
@@ -279,8 +477,9 @@ a,
     border: 1px solid
 }
 
-.Search .Form-Icon input {
-    border-color: #263238;
+.Search .Form-Icon input,
+.Search .Form-Icon i {
+    opacity: .5;
 }
 
 input,
@@ -402,6 +601,10 @@ select,
     }
 }
 
+[class*=Row] {
+    margin-left: -.625rem;
+    margin-right: -.625rem
+}
 
 [class*=Row]>* {
     padding-left: .625rem;
@@ -479,6 +682,7 @@ input[type=submit] {
     font-size: .75rem;
     height: 91px;
     color: white;
+    z-index: 2;
 
 }
 
@@ -506,6 +710,20 @@ input[type=submit] {
     padding-right: 1.5rem
 }
 
+.sub-menu {
+    max-height: 0;
+    transition: .2s;
+    overflow: hidden;
+    opacity: 1
+}
+
+.sub-menu a {
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: #fff;
+    overflow: hidden
+}
 
 .Search {
     position: relative
@@ -542,7 +760,7 @@ input[type=submit] {
 
 .Body {
     position: relative;
-    padding: 1.25rem;
+    /* padding: 1.25rem; */
 }
 
 .title-home {
@@ -1580,6 +1798,7 @@ textarea {
 
 .list-movie-filter .list-movie-filter-item select {
     background: #222;
+    margin-bottom: 10px;
 }
 
 .list-movie-filter .list-movie-filter-item {
@@ -1623,12 +1842,7 @@ textarea {
     }
 }
 
-@media screen and (min-width: 48em) {
-    .TPost.Single header {
-        padding-left: 206px;
-        position: relative;
-    }
-}
+
 
 .AZList>li.Current>a,
 .AZList>li>a:hover,
@@ -1767,4 +1981,341 @@ section,
     background-color: #666;
     margin: 20px 0;
 
+}
+
+.MenuBtn {
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    padding: .75rem .5rem .5rem;
+    width: 46px;
+    border-radius: 4px;
+    z-index: 11;
+    height: 33px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1.25rem;
+    margin: auto;
+
+    align-items: center;
+    justify-content: center;
+    transition-duration: 10px;
+}
+
+[class*=Btn] {
+    cursor: pointer;
+}
+
+.MenuBtn i {
+    width: 20px;
+    height: 2px;
+    background-color: #f5f5f5;
+    transition: .4s;
+    display: block;
+    margin: 3px auto;
+}
+
+.Button,
+.show .MenuBtn,
+.show .MenuBtn:hover {
+    color: white;
+    background-color: #ecc761;
+}
+
+.show .MenuBtn i:first-child,
+.open .MenuBtn i:first-child {
+    transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.show .MenuBtn i:nth-child(2),
+.open .MenuBtn i:nth-child(2) {
+    opacity: 0;
+}
+
+.show .MenuBtn i:last-child,
+.open .MenuBtn i:last-child {
+    transform: rotate(45deg) translate(-3px, -3px);
+}
+
+
+@media screen and (max-width:62em) {
+    .navbar-notice {
+        width: 100%
+    }
+
+    .TPMvCn .Title {
+        text-align: center;
+
+    }
+
+    .MovieListSld .owl-controls .owl-pagination {
+        display: none;
+    }
+
+    #SearchDesktop {
+        display: none
+    }
+
+    #SearchMobile {
+        display: block !important;
+        position: absolute;
+        right: 80px;
+        top: 15px
+    }
+
+    .user-name-text {
+        display: block !important;
+        float: left;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700
+    }
+
+    .manage-notifi {
+        width: 250px
+    }
+
+    .Header .Rght {
+        position: fixed;
+        left: -270px;
+        top: 0;
+        height: 100%;
+        transition: .2s;
+        z-index: 10;
+        opacity: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+        width: 270px;
+        padding: 1rem;
+        overflow-y: auto;
+        overflow-x: hidden
+    }
+
+    .Header .Rght:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        box-shadow: 0 10px 0 rgba(0, 0, 0, .5);
+        position: absolute;
+        z-index: -1;
+        transition: .2s
+    }
+
+    .Header .Menu {
+        margin: 0 -1rem
+    }
+
+    .Logo {
+        padding-right: 4rem
+    }
+
+    .sub-menu.show {
+        opacity: 1;
+        max-height: 999em;
+        padding: 5px 0
+    }
+
+    .sub-menu>li {
+        float: left;
+        width: 50%;
+        font-size: .7rem
+    }
+
+    .sub-menu>li>a {
+        padding-right: .5rem
+    }
+
+    .sub-menu .sub-menu>li {
+        float: none;
+        width: auto
+    }
+
+    .menu-item-has-children>i:before {
+        right: 1rem
+    }
+
+    .Login {
+        margin-bottom: 1rem;
+        background: #090b0c;
+        padding: 19px
+    }
+
+    label.LnkUser {
+        position: relative;
+        top: -10px;
+        right: -10px
+    }
+
+    .MenuBtnClose {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        transition: .2s;
+        visibility: hidden;
+        z-index: 9
+    }
+
+    .Tp-Wp.show .Header {
+        opacity: 1;
+        top: 0;
+        z-index: 3
+    }
+
+    .Tp-Wp.show .Header .Rght {
+        left: 0;
+        opacity: .9
+    }
+
+    .Tp-Wp.show .Header .Rght:before {
+        left: 0
+    }
+
+    .Tp-Wp.show .MenuBtnClose {
+        visibility: visible;
+        opacity: 1
+    }
+
+    .Tp-Wp.show .Body,
+    .Tp-Wp.show .Footer {
+        filter: blur(5px)
+    }
+
+    .Body {
+        padding: 0
+    }
+
+    html[class]>body .Footer .MnBrCn,
+    html[class]>body .MnBrCn .MnBr {
+        border-radius: 0 !important
+    }
+
+    .Footer .MnBrCn {
+        max-width: none;
+        margin-left: -1.25rem;
+        margin-right: -1.25rem
+    }
+
+    .Footer .Logo {
+        padding-right: 0;
+        text-align: center
+    }
+
+    .Footer .Menu {
+        margin-bottom: 1rem
+    }
+
+    .Footer .Menu>ul>li {
+        margin-bottom: .5rem
+    }
+
+    .Footer .Menu>ul>li>a {
+        border-radius: 20px
+    }
+
+    .Footer .Menu>ul>li>i.On+a {
+        margin-bottom: .5rem
+    }
+
+    .Footer .Menu .sub-menu {
+        border-radius: 10px
+    }
+
+    .Footer .Menu .sub-menu.show {
+        max-height: 200px
+    }
+
+    .Footer .Menu .sub-menu.show:hover {
+        overflow: auto
+    }
+
+    .Footer .Menu>ul>li:last-child {
+        margin-bottom: 0
+    }
+
+    .ListSocial {
+        margin-bottom: 1.5rem
+    }
+
+    .qtip {
+        opacity: 0 !important;
+        pointer-events: none
+    }
+
+    .TPost.D .Image {
+        margin-bottom: .5rem
+    }
+
+    .TPost.D .Image img {
+        border-radius: 10px 10px 0 0
+    }
+
+    .TPost.D .TPMvCn {
+        box-shadow: none;
+        background-color: transparent
+    }
+
+    .MovieListSldCn,
+    .MovieListSld {
+        position: relative
+    }
+
+    .MovieListSld {
+        z-index: 2
+    }
+
+    .MovieListSldCn:after,
+    .MovieListSldCn:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        z-index: 1
+    }
+
+    .MovieListSldCn:before {
+        opacity: .1
+    }
+
+    .MovieListSldCn:after {
+        border: 1px solid transparent;
+        opacity: .2
+    }
+
+    .TpRwCont>main {
+        margin-bottom: 1.2rem
+    }
+
+    .widget_categories>ul {
+        margin: 0 -5px
+    }
+
+    .widget_categories>ul>li {
+        float: left;
+        margin-right: 5px
+    }
+}
+
+[class*=Form-] {
+    margin-bottom: 1rem;
+}
+
+nav ul,
+[class*=Menu],
+[class*=List],
+[class*=Row] {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menu-item-has-children {
+    position: relative;
 }

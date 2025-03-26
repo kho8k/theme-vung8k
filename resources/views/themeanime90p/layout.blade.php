@@ -68,7 +68,8 @@ if (!function_exists('formatViews')) {
     <link rel="stylesheet" type="text/css" href="{{ asset('/themes/anime90p/css/fonts.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/themes/anime90p/css/layoutStyle.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/themes/anime90p/css/detailMoviStyle.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('/themes/anime90p/css/watchMoviStyle.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('/themes/anime90p/css/watchMoviStyle.css') }}" />  
+    
 @endpush
 
 @section('body')
